@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AudioKitMan.png" translatesAutoresizingMaskIntoConstraints="NO" id="30U-IX-RXQ">
+                                <rect key="frame" x="16" y="20" width="131" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="1rB-gB-OIL"/>
+                                    <constraint firstAttribute="height" constant="131" id="aew-BT-4Qy"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94W-VS-hTf">
+                                <rect key="frame" x="155" y="41" width="429" height="90"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="EtR-OO-VkF"/>
+                                    <constraint firstAttribute="width" constant="429" id="p5O-HT-Bov"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Play Sine Wave at 440Hz">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="toggleSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eUg-XH-P9G"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAm-Gk-36R" customClass="AKAudioOutputRollingWaveformPlot">
+                                <rect key="frame" x="16" y="213" width="568" height="103"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="dFX-45-baO"/>
+                                    <constraint firstAttribute="height" constant="103" id="sNM-3B-iq0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Output Plots (swipe to change)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdr-fU-CIJ">
+                                <rect key="frame" x="16" y="159" width="568" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="Ofc-FE-rhy"/>
+                                    <constraint firstAttribute="height" constant="46" id="kaa-7Q-HpU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMm-Gh-ZDb" customClass="AKAudioOutputFFTPlot">
+                                <rect key="frame" x="16" y="342" width="568" height="103"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="Hgz-td-FcC"/>
+                                    <constraint firstAttribute="width" constant="568" id="tjh-Bm-X6D"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z83-ZT-POg" customClass="AKAudioOutputPlot">
+                                <rect key="frame" x="16" y="469" width="568" height="103"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="ecm-ou-YD0"/>
+                                    <constraint firstAttribute="width" constant="568" id="pGL-TQ-kYJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="vdr-fU-CIJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2Dd-7f-IkC"/>
+                            <constraint firstItem="z83-ZT-POg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2iT-3Z-Vzc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="30U-IX-RXQ" secondAttribute="trailing" constant="-16" id="4jq-J1-UcO"/>
+                            <constraint firstItem="94W-VS-hTf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4nz-Up-YtU"/>
+                            <constraint firstItem="z83-ZT-POg" firstAttribute="top" secondItem="mMm-Gh-ZDb" secondAttribute="bottom" constant="24" id="88a-MI-rFK"/>
+                            <constraint firstItem="mMm-Gh-ZDb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9ze-RW-gQY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="z83-ZT-POg" secondAttribute="bottom" constant="28" id="DFO-Xq-rdM"/>
+                            <constraint firstItem="94W-VS-hTf" firstAttribute="leading" secondItem="30U-IX-RXQ" secondAttribute="trailing" constant="8" id="F1i-D4-16m"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="30U-IX-RXQ" secondAttribute="bottom" id="KTr-Fu-JK1"/>
+                            <constraint firstItem="mMm-Gh-ZDb" firstAttribute="height" secondItem="z83-ZT-POg" secondAttribute="height" id="OVw-wR-YqM"/>
+                            <constraint firstItem="XAm-Gk-36R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OrC-Cx-26y"/>
+                            <constraint firstItem="XAm-Gk-36R" firstAttribute="top" secondItem="vdr-fU-CIJ" secondAttribute="bottom" constant="8" id="RLg-9R-fsj"/>
+                            <constraint firstItem="30U-IX-RXQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WVe-jQ-cAh"/>
+                            <constraint firstItem="mMm-Gh-ZDb" firstAttribute="height" secondItem="XAm-Gk-36R" secondAttribute="height" id="Xqs-pg-hBQ"/>
+                            <constraint firstItem="z83-ZT-POg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b95-Wp-xOA"/>
+                            <constraint firstItem="XAm-Gk-36R" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="c7E-g1-WkO"/>
+                            <constraint firstItem="30U-IX-RXQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dKV-dt-Mkf"/>
+                            <constraint firstItem="vdr-fU-CIJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fAF-eP-a8W"/>
+                            <constraint firstItem="mMm-Gh-ZDb" firstAttribute="top" secondItem="XAm-Gk-36R" secondAttribute="bottom" constant="26" id="hU3-as-fzh"/>
+                            <constraint firstItem="30U-IX-RXQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="hYz-Tc-VP0"/>
+                            <constraint firstItem="mMm-Gh-ZDb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u5y-pA-dbd"/>
+                            <constraint firstItem="vdr-fU-CIJ" firstAttribute="top" secondItem="94W-VS-hTf" secondAttribute="bottom" constant="28" id="ul8-MZ-d34"/>
+                            <constraint firstItem="94W-VS-hTf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="zez-lh-m1i"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4jq-J1-UcO"/>
+                                <exclude reference="hYz-Tc-VP0"/>
+                                <exclude reference="KTr-Fu-JK1"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="k0g-25-E1B" appends="YES" id="YC7-id-5jc"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="k0g-25-E1B">
+                    <connections>
+                        <segue destination="2MZ-yE-Y55" kind="presentation" modalTransitionStyle="flipHorizontal" id="YXL-WT-HpU"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2055" y="-476"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SWq-yU-YR4">
+            <objects>
+                <viewController id="2MZ-yE-Y55" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5d0-pt-emj"/>
+                        <viewControllerLayoutGuide type="bottom" id="jYY-hr-0Xe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DNd-CG-hRV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AudioKitMan.png" translatesAutoresizingMaskIntoConstraints="NO" id="8j5-49-bbj">
+                                <rect key="frame" x="16" y="28" width="131" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="D1V-zo-xiH"/>
+                                    <constraint firstAttribute="width" constant="131" id="MWu-ER-Kf1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FE4-cj-7nr">
+                                <rect key="frame" x="155" y="49" width="429" height="90"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="qm9-lE-Ng5"/>
+                                    <constraint firstAttribute="width" constant="429" id="rdk-t3-EJS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Play Sine Wave at 440Hz">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="toggleSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nKG-5T-0mB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Input Plots (swipe to change)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-De-pKs">
+                                <rect key="frame" x="16" y="167" width="568" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="nie-oA-Nsh"/>
+                                    <constraint firstAttribute="height" constant="46" id="yCl-oH-Qr9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oQ-Ij-jKc" customClass="AKAudioInputFFTPlot">
+                                <rect key="frame" x="16" y="350" width="568" height="103"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="fKW-4X-Pkq"/>
+                                    <constraint firstAttribute="width" constant="568" id="ocO-eX-5H4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IF-jb-Kr5" customClass="AKAudioInputPlot">
+                                <rect key="frame" x="16" y="477" width="568" height="103"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="Jp0-Tb-jJo"/>
+                                    <constraint firstAttribute="height" constant="103" id="wwU-0r-8Vq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8z-Xj-HIl" customClass="AKAudioInputRollingWaveformPlot">
+                                <rect key="frame" x="16" y="221" width="568" height="103"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="568" id="f2o-Xp-Lzr"/>
+                                    <constraint firstAttribute="height" constant="103" id="wXe-YO-xmc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="3IF-jb-Kr5" firstAttribute="leading" secondItem="DNd-CG-hRV" secondAttribute="leadingMargin" id="0b6-TQ-QmS"/>
+                            <constraint firstItem="FE4-cj-7nr" firstAttribute="leading" secondItem="8j5-49-bbj" secondAttribute="trailing" constant="8" id="3od-Jb-aUk"/>
+                            <constraint firstItem="g8z-Xj-HIl" firstAttribute="height" secondItem="3IF-jb-Kr5" secondAttribute="height" id="7XW-ZS-TIX"/>
+                            <constraint firstItem="g8z-Xj-HIl" firstAttribute="height" secondItem="4oQ-Ij-jKc" secondAttribute="height" id="Abj-30-kFB"/>
+                            <constraint firstItem="g8z-Xj-HIl" firstAttribute="trailing" secondItem="DNd-CG-hRV" secondAttribute="trailingMargin" id="EI6-ua-MQS"/>
+                            <constraint firstItem="9lT-De-pKs" firstAttribute="trailing" secondItem="DNd-CG-hRV" secondAttribute="trailingMargin" id="FgN-Q8-9lU"/>
+                            <constraint firstItem="9lT-De-pKs" firstAttribute="leading" secondItem="DNd-CG-hRV" secondAttribute="leadingMargin" id="JDV-Fh-QZB"/>
+                            <constraint firstItem="g8z-Xj-HIl" firstAttribute="leading" secondItem="DNd-CG-hRV" secondAttribute="leadingMargin" id="Jur-Bf-0ce"/>
+                            <constraint firstItem="FE4-cj-7nr" firstAttribute="top" secondItem="5d0-pt-emj" secondAttribute="bottom" constant="29" id="K0h-m6-Rok"/>
+                            <constraint firstItem="4oQ-Ij-jKc" firstAttribute="leading" secondItem="DNd-CG-hRV" secondAttribute="leadingMargin" id="KIZ-BE-O5Y"/>
+                            <constraint firstItem="8j5-49-bbj" firstAttribute="leading" secondItem="DNd-CG-hRV" secondAttribute="leadingMargin" id="N4p-Zs-g1m"/>
+                            <constraint firstItem="8j5-49-bbj" firstAttribute="top" secondItem="5d0-pt-emj" secondAttribute="bottom" constant="8" id="Q9H-Xn-pti"/>
+                            <constraint firstItem="4oQ-Ij-jKc" firstAttribute="trailing" secondItem="DNd-CG-hRV" secondAttribute="trailingMargin" id="ZP7-56-Jl7"/>
+                            <constraint firstItem="FE4-cj-7nr" firstAttribute="trailing" secondItem="DNd-CG-hRV" secondAttribute="trailingMargin" id="af1-Da-4FL"/>
+                            <constraint firstItem="g8z-Xj-HIl" firstAttribute="top" secondItem="9lT-De-pKs" secondAttribute="bottom" constant="8" id="bsO-Gp-3er"/>
+                            <constraint firstItem="9lT-De-pKs" firstAttribute="top" secondItem="FE4-cj-7nr" secondAttribute="bottom" constant="28" id="cFN-cz-yoX"/>
+                            <constraint firstItem="3IF-jb-Kr5" firstAttribute="trailing" secondItem="DNd-CG-hRV" secondAttribute="trailingMargin" id="cv7-UT-Fa3"/>
+                            <constraint firstItem="3IF-jb-Kr5" firstAttribute="top" secondItem="4oQ-Ij-jKc" secondAttribute="bottom" constant="24" id="fHd-I7-xrB"/>
+                            <constraint firstItem="4oQ-Ij-jKc" firstAttribute="top" secondItem="g8z-Xj-HIl" secondAttribute="bottom" constant="26" id="zFl-zN-LLL"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DX9-HH-4h4" appends="YES" id="Xro-ev-qhU"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRe-Bt-h8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="DX9-HH-4h4">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="nb0-OR-N3T"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1294" y="-476"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AudioKitMan.png" width="357" height="357"/>
+    </resources>
+</document>
